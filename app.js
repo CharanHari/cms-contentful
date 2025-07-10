@@ -27,16 +27,6 @@ app.post('/entrycreate', async (req, res) => {
 
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server is running on port ${process.env.PORT || 3000}`);
 });
-
-/*const options = {
-    key: fs.readFileSync(path.join(__dirname, 'server.key')),
-    cert: fs.readFileSync(path.join(__dirname, 'server.cert'))
-};
-
-https.createServer(options, app).listen(4430, () => {
-    console.log('Express HTTPS server running at https://localhost:4430');
-});  */
